@@ -1469,7 +1469,24 @@ setAmount(value.replace(/[^0-9]/g, ''))
 - Destructive actions use Red `#FF5277` fill with <span class="no">NAVY</span> text (not white), and only alongside
   the two-button confirmation modal. Measured: white on that red is 3.12:1 (fails AA), Navy is 5.12:1 (passes).
 
-<span class="h">## 8. Interaction States (§1.7)</span>
+<span class="h">## 5. Defensive Engineering &amp; Safety</span>
+- Currency inputs must safely strip commas before numeric parsing to prevent `NaN` bugs.
+- API submission buttons MUST implement debounce and display loading spinners with `disabled` states.
+- Long-form document editors must feature automatic local draft saving.
+
+<span class="dim">&gt; 아래 6·7절은 원문 룰셋 블록에 없던 확장이다. 본 문서 §3·§2에서 파생했다.</span>
+
+<span class="h">## 6. Document State Machine</span>
+<span class="dim">- Draft → Sent → Viewed → Signed → Paid → Reported
+- Badge tokens are fixed per state; do not invent new status colors.
+  Draft    bg-gray-100 / text-gray-700       Signed   bg-teal-50 / text-teal-700
+  Sent     bg-blue-50 / text-blue-700        Paid     bg-emerald-50 / text-emerald-700
+  Viewed   bg-purple-50 / text-purple-700    Reported bg-green-100 / text-green-800</span>
+
+<span class="h">## 7. Layout Density</span>
+<span class="dim">- Dashboard / Ledger screens: &gt;=1280px, 64px global rail + 280px list + main, table rows 36-40px.
+- Focused Document screens: 760-840px centered, input height 40-44px, single primary CTA in header.
+- Mobile (&lt;768px): bottom tab bar + bottom sheet, card list rows &gt;=48px.</span><span class="h">## 8. Interaction States (§1.7)</span>
 - Never invent a state color. Step down the existing neutral ladder:
   surface hover `#F3F4F6` → pressed `#E5E7EB`; primary hover `#0E3852` → pressed `#04161F`.
 - Declare hover only inside `@media (hover: hover)`. On touch devices a hover style sticks after tap.
@@ -1534,24 +1551,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
   settings, wizards — go inside the dashboard pattern even when they are a single flow. Reserve the document
   pattern for artifacts that get printed or sent.
 
-<span class="h">## 5. Defensive Engineering &amp; Safety</span>
-- Currency inputs must safely strip commas before numeric parsing to prevent `NaN` bugs.
-- API submission buttons MUST implement debounce and display loading spinners with `disabled` states.
-- Long-form document editors must feature automatic local draft saving.
-
-<span class="dim">&gt; 아래 6·7절은 원문 룰셋 블록에 없던 확장이다. 본 문서 §3·§2에서 파생했다.</span>
-
-<span class="h">## 6. Document State Machine</span>
-<span class="dim">- Draft → Sent → Viewed → Signed → Paid → Reported
-- Badge tokens are fixed per state; do not invent new status colors.
-  Draft    bg-gray-100 / text-gray-700       Signed   bg-teal-50 / text-teal-700
-  Sent     bg-blue-50 / text-blue-700        Paid     bg-emerald-50 / text-emerald-700
-  Viewed   bg-purple-50 / text-purple-700    Reported bg-green-100 / text-green-800</span>
-
-<span class="h">## 7. Layout Density</span>
-<span class="dim">- Dashboard / Ledger screens: &gt;=1280px, 64px global rail + 280px list + main, table rows 36-40px.
-- Focused Document screens: 760-840px centered, input height 40-44px, single primary CTA in header.
-- Mobile (&lt;768px): bottom tab bar + bottom sheet, card list rows &gt;=48px.</span></pre>
+</pre>
       </div>
     </section>
 
