@@ -2,7 +2,7 @@
 
 지투시그마(페이워크) 프론트엔드 UX/UI 가이드 — 공개판.
 
-**→ https://seinleepaywork.github.io/paywork-ux-guide/**
+**→ https://seinleepaywork.github.io/keeper-hqweb-guide/**
 
 ## 무엇인가
 
