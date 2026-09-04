@@ -500,7 +500,7 @@ footer.foot{
     <header class="hero">
       <h1>Simplify 1.0 UX 바이블</h1>
       <div class="byline">
-        <span class="lbl">지투시그마 · Paywork</span>
+        <span class="lbl">지투시그마 · 키퍼AI</span>
         <span class="st st-draft">Draft</span>
       </div>
       <p class="hero-lead">
@@ -519,7 +519,7 @@ footer.foot{
         </div>
         <div>
           <dt class="lbl">적용 범위</dt>
-          <dd>페이워크 웹 · 앱 전체 화면</dd>
+          <dd>키퍼AI 웹 · 앱 전체 화면</dd>
         </div>
         <div>
           <dt class="lbl">서체</dt>
@@ -887,14 +887,14 @@ footer.foot{
 
             <div class="main-pal">
               <div class="main-card">
-                <div class="main-chip" style="background:#072436;color:#FFFFFF">Paywork Navy</div>
+                <div class="main-chip" style="background:#072436;color:#FFFFFF">키퍼AI Navy</div>
                 <div class="main-meta">
                   <p>믿음직한 · 안전한 · 편안한. 안정적인 정산 관리 서비스의 이미지를 담는다.</p>
                   <span class="main-spec">#072436 · R7 G36 B54<br>PANTONE 289 C · C60 M20 Y0 K90</span>
                 </div>
               </div>
               <div class="main-card">
-                <div class="main-chip" style="background:#10DE52;color:#072436">Paywork Green</div>
+                <div class="main-chip" style="background:#10DE52;color:#072436">키퍼AI Green</div>
                 <div class="main-meta">
                   <p>확인된 · 완료된 · 해결된. 건강해진 자금의 흐름과 깨끗한 운영 인식을 심는다.</p>
                   <span class="main-spec">#10DE52 · R16 G222 B82<br>PANTONE 2270 C · C75 M0 Y100 K0</span>
@@ -919,7 +919,7 @@ footer.foot{
               <div class="dd-col dd-no">
                 <span class="lbl">Forbidden</span>
                 <ul>
-                  <li><b>Paywork Green 을 주 CTA 배경으로</b> 쓰기</li>
+                  <li><b>키퍼AI Green 을 주 CTA 배경으로</b> 쓰기</li>
                   <li>§3 상태 색(blue · purple · teal · emerald)을 <b class="keep">버튼에 재사용</b>하기</li>
                   <li>브랜드 정의서에 없는 색을 새로 만들기</li>
                   <li><b>선택 상태·토글·태그에 Navy 채움</b>을 쓰기 — 주 CTA와 위계가 같아진다</li>
@@ -969,7 +969,7 @@ footer.foot{
               </div>
             </div>
             <div class="pal">
-              <span class="lbl">Paywork Green Tint 10 – 100%</span>
+              <span class="lbl">키퍼AI Green Tint 10 – 100%</span>
               <div class="tints">
                 <div class="tint"><i style="background:#E7FCEE"></i><span>10%</span></div>
                 <div class="tint"><i style="background:#CFF8DC"></i><span>20%</span></div>
@@ -1128,7 +1128,7 @@ footer.foot{
               </table>
             </div>
             <ul class="bullets">
-              <li>결과 없음은 <b>입력한 조건을 문장에 되짚어 준다</b> — "'페이워크'로 검색한 결과가 없습니다."</li>
+              <li>결과 없음은 <b>입력한 조건을 문장에 되짚어 준다</b> — "'키퍼AI'로 검색한 결과가 없습니다."</li>
               <li><b>Green은 완료된 빈에만.</b> 최초 빈에 Green을 쓰면 "완료됨"으로 오해된다(§1.6).</li>
             </ul>
 
@@ -1640,7 +1640,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
             <span id="copyLabel">전체 복사</span>
           </button>
         </div>
-        <pre class="payload-code" id="payload"><span class="h"># Z to Sigma (Paywork) Frontend Constitution &amp; Rules</span>
+        <pre class="payload-code" id="payload"><span class="h"># Z to Sigma (KeeperAI) Frontend Constitution &amp; Rules</span>
 
 <span class="h">## 0. Before You Start (READ THIS FIRST)</span>
 - <span class="no">TRIGGER</span>: any new screen/service, any menu improvement, any new component, any layout or
@@ -1768,10 +1768,10 @@ setAmount(value.replace(/[^0-9]/g, ''))
 - Touch Targets: Interactive elements must have a minimum height &gt;= 40px (Mobile &gt;= 44px).
 - Badges &amp; Tags: Always set `flex-shrink: 0; white-space: nowrap;` to prevent layout collapse.
 - Light theme ONLY. Declare `color-scheme: light`. Never add a dark palette or `prefers-color-scheme` block.
-- Brand colors: Paywork Navy `#072436` (PANTONE 289 C) and Paywork Green `#10DE52` (PANTONE 2270 C).
+- Brand colors: KeeperAI Navy `#072436` (PANTONE 289 C) and KeeperAI Green `#10DE52` (PANTONE 2270 C).
 - Primary CTA is <span class="no">ALWAYS</span> Navy `#072436` fill with white text. Focus ring is 2px Navy — never the
   browser default blue.
-- <span class="no">NEVER</span> use Paywork Green as a button background. The brand defines Green as
+- <span class="no">NEVER</span> use KeeperAI Green as a button background. The brand defines Green as
   "confirmed / completed / resolved", which is exactly what Paid and Reported mean in the state machine.
   A green CTA on a Draft screen destroys the green-means-done mapping. Green is for status and success feedback only.
 - Destructive actions use Red `#FF5277` fill with <span class="no">NAVY</span> text (not white), and only alongside
@@ -1820,7 +1820,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
   Delay the skeleton by <span class="no">200ms</span> — flicker is worse than waiting. Mirror the real layout so
   nothing shifts on load.
 - Empty state has THREE variants, never one: first-run (has a primary CTA), no-results (reset-filter only,
-  echo the query back), all-clear (no CTA, Paywork Green allowed). Green on first-run reads as "done" — forbidden.
+  echo the query back), all-clear (no CTA, KeeperAI Green allowed). Green on first-run reads as "done" — forbidden.
 - Errors: 5xx/timeout → "Retry" primary. 403 → no retry button, it will not work. 404 → back to list.
 - Never print stack traces or status codes. Print a request ID in `mono 11px` instead.
 - Error copy: what failed + what to do, two sentences max. Never "An error occurred". No apologies.
@@ -2019,7 +2019,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
           <span class="chip">서체 <span class="mono">1종</span> Spoqa Han Sans Neo · 세리프 <span class="mono">0</span>종</span>
           <span class="chip">외부 요청 <span class="mono">0건</span> · 폰트 <span class="mono">195KB</span> 내장</span>
           <span class="chip">숫자 고정폭 <span class="mono">596/1000em</span> 실측</span>
-          <span class="chip">주 CTA <span class="mono">#072436</span> Paywork Navy · 상태색 미재사용</span>
+          <span class="chip">주 CTA <span class="mono">#072436</span> 키퍼AI Navy · 상태색 미재사용</span>
           <span class="chip">채움 위반 <span class="mono">0건</span> · <span class="mono">207</span>문단 전수 · <span class="mono">1440px</span> (<span class="mono">scripts/audit-fill.js</span>)</span>
           <span class="chip">한 음절 고아 <span class="mono">0건</span></span>
           <span class="chip">짧은 의미 단위 분리 <span class="mono">0건</span></span>
@@ -2094,7 +2094,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
       </article>
 
       <footer class="foot">
-        <span>Z to Sigma · Paywork — Simplify 1.0 UX Bible (DRAFT)<br>docs/UX_GUIDE.md · 2026-08 통합</span>
+        <span>Z to Sigma · 키퍼AI — Simplify 1.0 UX Bible (DRAFT)<br>docs/UX_GUIDE.md · 2026-08 통합</span>
         <span>§7 미결 7건 · 결정 후 1.0 확정<br>선택 대기 3건 — OPEN-01(토큰 SSOT) · OPEN-09(적용범위) · OPEN-10(배지 브랜드 정합)</span>
       </footer>
     </section>
