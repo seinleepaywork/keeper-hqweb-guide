@@ -640,6 +640,7 @@ footer.foot{
               <li>금액·수량 셀 <b><code class="tok">tabular-nums</code> + 우측 정렬 + 3자리 콤마</b></li>
               <li>배지·태그·버튼 <b><code class="tok">flex-shrink:0</code> + <code class="tok">nowrap</code></b></li>
               <li>캔버스 <b><code class="tok">#F9FAFB</code></b> · 카드 <b><code class="tok">1px #E5E7EB</code> · <code class="tok">r12</code></b></li>
+              <li>중첩 카드가 있으면 <b>바깥 라운드 = 안쪽 라운드 + 두 면 사이 간격</b> — 세 값을 실측해 등식이 성립하는지 확인한다(§1.5)</li>
               <li>인터랙티브 최소 높이 <b>40px</b></li>
               <li>테이블 행 <b>36–40px</b> — 하단선을 <code class="tok">border-bottom</code>으로 그리면
                 40px 행이 <b>41px</b>이 된다. <code class="tok">box-shadow: inset 0 -1px 0</code>으로 그려 레이아웃 높이에서 뺀다</li>
@@ -839,6 +840,7 @@ footer.foot{
               <li><b>섹션은 카드로 가르지 않는다.</b> 라벨 + <code class="tok">1px</code> 구분선만으로 가른다. 카드는 성격이 다른 묶음에만 쓴다.</li>
               <li><b>섹션 위에 라벨을 얹지 않는다.</b> 제목 위에 <code class="tok">시작하기</code> 같은 작은 라벨(eyebrow)을 두면 바로 아래 제목과 <b>같은 말을 두 번</b> 하거나, 정보가 없는 장식이 된다. 섹션은 <b>제목 + 위쪽 구분선</b>으로 충분하다. 상태·개수처럼 정말 필요한 보조 정보는 <b>제목과 같은 줄 오른쪽</b>에 붙인다.</li>
               <li><b>장식 도형을 붙이지 않는다.</b> 라벨·제목 앞의 사각(<code class="tok">■</code>)·점·아이콘 같은 장식은 정보를 담지 않으면서 시선을 끈다.</li>
+              <li><b>카드 안에 카드를 넣으면 바깥 라운드는 「안쪽 라운드 + 두 면 사이 간격」이다.</b> 같은 값을 쓰면 두 곡선의 곡률 중심이 어긋나 <b>바깥 모서리가 안쪽보다 꺾여 보인다.</b> 실측: 애니메이션 카드 안에 QR 카드를 <code class="tok">16px</code> 띄우고 둘 다 <code class="tok">12px</code>로 뒀더니 바깥이 꺾여 보였다 — 바깥을 <b><code class="tok">12 + 16 = 28px</code></b>로 올려 곡선이 평행해졌다. <b>이 규칙은 아래 표의 <code class="tok">12px</code>을 재해석하게 강제한다</b> — <code class="tok">12px</code>은 <b>단일 카드</b>의 값이고, 중첩된 <b>바깥</b> 면에는 도출값을 쓴다. 3중 중첩이면 같은 식을 한 번 더 적용한다. <b>간격을 바꾸면 바깥 라운드도 반드시 같이 바뀐다</b> — 두 값을 각각 토큰으로 두고 도출 관계를 주석으로 남긴다. 안 남기면 다음 사람이 간격만 고치고 라운드는 그대로 둔다. <b>안쪽 카드가 없는 면에는 적용하지 않는다</b> — 동심을 맞출 대상이 없으면 단일 카드다(좁은 화면에서 안쪽 카드를 숨기는 경우 포함).</li>
             </ul>
             <div class="tbl-wrap">
               <table>
@@ -864,7 +866,12 @@ footer.foot{
                   <tr>
                     <td class="name">라운드</td>
                     <td class="num">12px</td>
-                    <td>카드·모듈 <code class="tok">border-radius</code></td>
+                    <td><b>단일</b> 카드·모듈 <code class="tok">border-radius</code></td>
+                  </tr>
+                  <tr>
+                    <td class="name">중첩 라운드</td>
+                    <td class="num">안쪽 + 간격</td>
+                    <td>카드 안 카드의 <b>바깥</b> 면. 12px 카드를 16px 띄우면 바깥은 28px</td>
                   </tr>
                   <tr>
                     <td class="name">터치 타깃</td>
@@ -1778,6 +1785,11 @@ setAmount(value.replace(/[^0-9]/g, ''))
 <span class="h">## 4. Visual Tokens &amp; Surface Language</span>
 - Canvas Background: `#F9FAFB` (Off-white canvas). Pure white `#FFFFFF` for page background is prohibited.
 - Cards &amp; Surfaces: `#FFFFFF` with `border: 1px solid #E5E7EB` and `border-radius: 12px`. Drop shadows minimal.
+- Nested cards: the OUTER radius MUST equal `inner radius + the gap between the two surfaces`.
+  Equal radii misalign the two arcs and the outer corner reads as pinched. Measured: a QR card inset `16px`
+  inside a media card, both at `12px`, looked wrong; the outer went to `12 + 16 = 28px` and the arcs ran parallel.
+  The `12px` above is the SINGLE-card value. Repeat the formula for each nesting level, keep the gap and the
+  radius as separate tokens with the derivation in a comment, and skip the rule where no inner card exists.
 - Touch Targets: Interactive elements must have a minimum height &gt;= 40px. Mobile values live in the mobile edition.
 - Badges &amp; Tags: Always set `flex-shrink: 0; white-space: nowrap;` to prevent layout collapse.
 - Light theme ONLY. Declare `color-scheme: light`. Never add a dark palette or `prefers-color-scheme` block.
