@@ -531,9 +531,9 @@ footer.foot{
         <div class="stat"><dt class="lbl">캔버스</dt><dd>#F9FAFB</dd></div>
         <div class="stat"><dt class="lbl">카드 라운드</dt><dd>12px <small>· 보더 1px</small></dd></div>
         <div class="stat"><dt class="lbl">토스트 소멸</dt><dd>3s <small>· 자동</small></dd></div>
-        <div class="stat"><dt class="lbl">테이블 행</dt><dd>36–40px <small>· 모바일 48px</small></dd></div>
+        <div class="stat"><dt class="lbl">테이블 행</dt><dd>36–40px</dd></div>
         <div class="stat"><dt class="lbl">문서 폭</dt><dd>760–840px</dd></div>
-        <div class="stat"><dt class="lbl">터치 타깃</dt><dd>≥40px <small>· 모바일 44px</small></dd></div>
+        <div class="stat"><dt class="lbl">터치 타깃</dt><dd>≥40px</dd></div>
       </dl>
     </header>
 
@@ -575,8 +575,8 @@ footer.foot{
                 <code class="tok">핸드폰 사진 찍기</code>는 데스크톱에서 파일 선택창이거나 웹캠이다. 둘 다 사용자가 기대한 행동이 아니다.
                 입력 경로는 <b>그 기기에서 사용자가 이미 매일 하는 행동</b> 위에만 놓는다.</li>
               <li><b>모바일 앱 화면은 이 문서로 검수하지 않는다.</b> 모바일 편(<code class="tok">keeper-mobile-guide</code>)이 따로 있다.
-                이 문서에 남아 있는 <b>모바일 괄호값 14곳</b>(터치 44px · 카드 48px+ · <code class="tok">&lt;768px</code> 탭바·바텀시트 ·
-                900px 미만 2분할 한계)은 <b>모바일 편으로 옮길 대상</b>이며, 옮기기 전까지는 <b>이 문서가 정본</b>이다.
+                이 문서에 있던 모바일 괄호값(터치 44 · 카드 48+ · <code class="tok">&lt;768px</code> 탭바·바텀시트)은
+                <b>2026-09-04 모바일 편으로 옮기고 여기서 지웠다.</b> 900px 미만 2분할 한계와 viewport 메타는 웹 규칙이라 남긴다.
                 같은 규칙을 두 문서가 다르게 적는 순간 <b>둘 다 못 믿는다</b> — 옮길 때는 한쪽에서 지우고 다른 쪽에 적는다. 양쪽에 두지 않는다.</li>
               <li><b>트랙이 둘이면 뼈대를 나란히 적는다.</b> 초보자용 · 전문가용처럼 같은 목적의 경로가 둘이면
                 <b>단계 이름을 두 줄로 나란히 써서 1:1로 대응하는지</b> 본다. 대응하지 않는 단계가 있으면 그것은
@@ -640,8 +640,8 @@ footer.foot{
               <li>금액·수량 셀 <b><code class="tok">tabular-nums</code> + 우측 정렬 + 3자리 콤마</b></li>
               <li>배지·태그·버튼 <b><code class="tok">flex-shrink:0</code> + <code class="tok">nowrap</code></b></li>
               <li>캔버스 <b><code class="tok">#F9FAFB</code></b> · 카드 <b><code class="tok">1px #E5E7EB</code> · <code class="tok">r12</code></b></li>
-              <li>인터랙티브 최소 높이 <b>40px</b>(모바일 44px)</li>
-              <li>테이블 행 <b>36–40px</b>(모바일 카드 48px+) — 하단선을 <code class="tok">border-bottom</code>으로 그리면
+              <li>인터랙티브 최소 높이 <b>40px</b></li>
+              <li>테이블 행 <b>36–40px</b> — 하단선을 <code class="tok">border-bottom</code>으로 그리면
                 40px 행이 <b>41px</b>이 된다. <code class="tok">box-shadow: inset 0 -1px 0</code>으로 그려 레이아웃 높이에서 뺀다</li>
               <li>비동기 발송·신고 버튼 <b><code class="tok">disabled</code> + 스피너</b></li>
               <li>서체 <b>Spoqa Han Sans Neo</b> 1종 · 웨이트 <b>400/500/700</b></li>
@@ -868,8 +868,8 @@ footer.foot{
                   </tr>
                   <tr>
                     <td class="name">터치 타깃</td>
-                    <td class="num">≥40px / 44px</td>
-                    <td>인터랙티브 최소 높이 (데스크톱 / 모바일)</td>
+                    <td class="num">≥40px</td>
+                    <td>인터랙티브 최소 높이</td>
                   </tr>
                   <tr>
                     <td class="name">배지 · 태그</td>
@@ -1229,7 +1229,7 @@ footer.foot{
                 <b>placeholder 줄 수</b>까지 세고 있었던 것이다. 고치는 법: 높이는 토큰에서만 받고, 입력창은
                 <code class="tok">줄높이 + 패딩 + 테두리 = 행 높이</code>가 되게 패딩을 행 높이에서 계산하고, 빈 칸은 재지 않고 행 높이로 둔다.
                 <b>여러 줄로 자란 입력창만 예외</b>다 — 그때도 나머지는 그 <b>아래 끝</b>에 맞춘다(<code class="tok">align-items: end</code>).
-                모바일에서 44px로 키울 때도 <b>토큰 하나만</b> 올린다. 한 행이 같이 자란다.
+                행 높이를 키울 때도 <b>토큰 하나만</b> 올린다. 한 행이 같이 자란다.
                 <b>대신 그 안의 글자 길이가 제약된다</b> — 한 줄 높이의 입력창에 두 줄짜리 플레이스홀더를 넣으면 둘째 줄이 잘린다(§1.10).</li>
               <li><b>같은 컬럼의 모든 블록은 좌우 끝이 정확히 일치한다.</b> 실측으로 확인한다 — 컬럼 안 블록들의 <code class="tok">left</code> 값이 하나여야 하고, <code class="tok">right</code> 값도 하나여야 한다. 카드 내부 요소는 카드 패딩만큼 들어가는 것이 정상이다.</li>
               <li><b>텍스트를 짜부라뜨리지 않는다.</b> <code class="tok">flex</code> 한 줄에 <b>줄지 않는 형제</b>(번호 · 배지 · 아이콘 —
@@ -1559,7 +1559,7 @@ footer.foot{
             <span class="badge badge-ok">정당한 분기</span>
           </div>
           <ul class="bullets">
-            <li><b>인터랙션</b> — 데스크톱은 3패널 Co-planar + 우측 슬라이드 드로어, 모바일(&lt;768px)은 하단 탭바 + 바텀 시트.</li>
+            <li><b>인터랙션</b> — 데스크톱은 3패널 Co-planar + 우측 슬라이드 드로어. 모바일은 모바일 편.</li>
             <li><b>테이블 밀도</b> — 데스크톱 36px 고밀도 행 유지, 터치 환경은 최소 48px 카드 리스트 뷰로 대체.</li>
           </ul>
         </article>
@@ -1778,7 +1778,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
 <span class="h">## 4. Visual Tokens &amp; Surface Language</span>
 - Canvas Background: `#F9FAFB` (Off-white canvas). Pure white `#FFFFFF` for page background is prohibited.
 - Cards &amp; Surfaces: `#FFFFFF` with `border: 1px solid #E5E7EB` and `border-radius: 12px`. Drop shadows minimal.
-- Touch Targets: Interactive elements must have a minimum height &gt;= 40px (Mobile &gt;= 44px).
+- Touch Targets: Interactive elements must have a minimum height &gt;= 40px. Mobile values live in the mobile edition.
 - Badges &amp; Tags: Always set `flex-shrink: 0; white-space: nowrap;` to prevent layout collapse.
 - Light theme ONLY. Declare `color-scheme: light`. Never add a dark palette or `prefers-color-scheme` block.
 - Brand colors: KeeperAI Navy `#072436` (PANTONE 289 C) and KeeperAI Green `#10DE52` (PANTONE 2270 C).
@@ -1821,7 +1821,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
 - <span class="no">The 840px measure cap is separable from the Focused Document skeleton.</span> Apply it to any
   "document to read" inside a dashboard column: cap 840, center it, fill the column when narrower. Without a cap the
   measure reaches 1824px at a 2560px viewport and 2704px at 3440px.
-- Mobile (&lt;768px): bottom tab bar + bottom sheet, card list rows &gt;=48px.</span><span class="h">## 8. Interaction States (§1.7)</span>
+- Mobile is specified in the mobile edition (keeper-mobile-guide); this document covers HQ web only.</span><span class="h">## 8. Interaction States (§1.7)</span>
 - Never invent a state color. Step down the existing neutral ladder:
   surface hover `#F3F4F6` → pressed `#E5E7EB`; primary hover `#0E3852` → pressed `#04161F`.
 - Declare hover only inside `@media (hover: hover)`. On touch devices a hover style sticks after tap.
