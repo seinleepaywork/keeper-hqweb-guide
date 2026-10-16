@@ -1616,7 +1616,7 @@ footer.foot{
 
         <article class="card pattern">
           <div class="rule-top">
-            <h3>대시보드 &amp; 원장형<span class="tipwrap"><button class="tip" type="button" aria-describedby="tip-3"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.6" stroke="currentColor" stroke-width="1.3"/><path d="M6.3 6.1c0-.9.8-1.6 1.7-1.6s1.7.7 1.7 1.6c0 .8-.5 1.1-1.1 1.5-.4.3-.6.6-.6 1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11.3" r=".85" fill="currentColor"/></svg><span class="sr">도움말</span></button><span class="tip-pop" role="tooltip" id="tip-3">좌측 글로벌 레일 64px + 2차 목록 280px + 메인 컨텍스트. 세부 정보는 우측 컨텍스트 드로어로 오버레이.</span></span></h3>
+            <h3>대시보드 &amp; 원장형<span class="tipwrap"><button class="tip" type="button" aria-describedby="tip-3"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.6" stroke="currentColor" stroke-width="1.3"/><path d="M6.3 6.1c0-.9.8-1.6 1.7-1.6s1.7.7 1.7 1.6c0 .8-.5 1.1-1.1 1.5-.4.3-.6.6-.6 1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11.3" r=".85" fill="currentColor"/></svg><span class="sr">도움말</span></button><span class="tip-pop" role="tooltip" id="tip-3">1차 내비 200–240px(아이콘 + 라벨) + 2차 목록 230–280px + 메인. 세부 정보는 오른쪽 드로어로 연다.</span></span></h3>
           </div>
           <div class="wf" aria-hidden="true">
             <div class="wf-rail"></div>
@@ -1980,7 +1980,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
   (`flex:1 1 14em; min-width:12em`) and let the siblings wrap. The badge-only guard from incident #02 never covered
   headings, so the same collapse came back there.
 - <span class="no">Put numbers and code labels inside the heading</span>, never beside it:
-  `<h3><span class="rule-no">1.9</span>Title</h3>`. As a sibling it either folds above the title (an eyebrow, forbidden
+  `&lt;h3&gt;&lt;span class="rule-no"&gt;1.9&lt;/span&gt;Title&lt;/h3&gt;`. As a sibling it either folds above the title (an eyebrow, forbidden
   by §1.10) or, once pinned with `nowrap`, squeezes it.
 - Measure at three widths: production width, <span class="no">320px</span>, and the width where that container is
   actually narrowest. Two are not enough — a header reported as passing at 1440 and 375 collapsed below 182px.
@@ -2086,7 +2086,8 @@ setAmount(value.replace(/[^0-9]/g, ''))
   measure reaches 1824px at a 2560px viewport and 2704px at 3440px.
 - Mobile is specified in the mobile edition (keeper-mobile-guide); this document covers HQ web only.</span><span class="h">## 8. Interaction States (§1.7)</span>
 - Never invent a state color. Step down the existing neutral ladder:
-  surface hover `#F3F4F6` → pressed `#E5E7EB`; primary hover `#0E3852` → pressed `#04161F`.
+  surface hover `#F3F4F6` → pressed `#E5E7EB`; primary CTA (Green `#10DE52`) hover `filter: brightness(.94)` → pressed `brightness(.88)`.
+  Do not step down to Green 03/04 — Navy text on them drops to 3.48:1.
 - Declare hover only inside `@media (hover: hover)`. On touch devices a hover style sticks after tap.
 - Use `:focus-visible` only, never `:focus`. Transition `background-color 120ms ease` — never layout properties.
 - <span class="no">DISTINGUISH</span> disabled from loading. Loading keeps the button's own background and adds a
@@ -2116,7 +2117,7 @@ setAmount(value.replace(/[^0-9]/g, ''))
 - One stat cell holds <span class="no">one</span> value. Never `6건 합계 35,328,000원` in a single cell — the reader
   cannot tell which number is the point. Never mix kinds in one row (workload vs time estimate).
 - Every block in a column MUST share one `left` and one `right`. Verify by measurement, not by eye.
-- <span class="no">RESET `ol` TOO.</span> `<ol>` ships with `padding-inline-start: 40px`. Resetting only `ul`
+- <span class="no">RESET `ol` TOO.</span> `&lt;ol&gt;` ships with `padding-inline-start: 40px`. Resetting only `ul`
   pushes that one row 40px inward and produces a visible misalignment. Reset `ul,ol,dl,dd,figure,fieldset`.
 - Background <span class="no">fill is for the primary CTA only</span> — one per screen. A selected option or toggle
   with the same Navy fill reads as a second primary action. Selected state = `#F3F4F6` + Navy text + weight 500.
